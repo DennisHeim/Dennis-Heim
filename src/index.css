@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #faf8f5;
+}
+
+@layer utilities {
+  .coffee-card {
+    @apply bg-white rounded-2xl shadow-sm border border-coffee-100 p-5 cursor-pointer transition-all duration-200;
+  }
+  .coffee-card:hover:not(:disabled) {
+    @apply shadow-md border-coffee-300 -translate-y-0.5;
+  }
+  .coffee-card.selected {
+    @apply border-coffee-500 shadow-md ring-2 ring-coffee-500 ring-offset-1;
+  }
+  .coffee-card.disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+}
